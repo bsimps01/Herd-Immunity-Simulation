@@ -34,9 +34,9 @@ class Simulation(object):
         # TODO: Call self._create_population() and pass in the correct parameters.
         # Store the array that this method will return in the self.population attribute.
         # TODO: Store each newly infected person's ID in newly_infected attribute.
-        # At the end of each time step, call self._infect_newly_infected()
+        # At the end of each time step, call self._infect_newly_infected() 
         # and then reset .newly_infected back to an empty list.
-        self.logger = None
+        self.logger = Logger(f'{pop_size} + {vacc_percentage} + {initial_infected} + {virus}\n')
         self.population = [] # List of Person objects
         self.pop_size = pop_size # Int
         self.next_person_id = 0 # Int
@@ -68,7 +68,8 @@ class Simulation(object):
 
         # Use the attributes created in the init method to create a population that has
         # the correct intial vaccination percentage and initial infected.
-        pass
+        population = []
+        for ppl in range(initial_infected)
 
     def _simulation_should_continue(self):
         ''' The simulation should only end if the entire population is dead
@@ -98,7 +99,7 @@ class Simulation(object):
         # TODO: for every iteration of this loop, call self.time_step() to compute another
         # round of this simulation.
         print('The simulation has ended after {time_step_counter} turns.'.format(time_step_counter))
-        pass
+        
 
     def time_step(self):
         ''' This method should contain all the logic for computing one time step
