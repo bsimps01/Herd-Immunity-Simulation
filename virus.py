@@ -14,3 +14,21 @@ def test_virus_instantiation():
     assert virus.name == "HIV"
     assert virus.repro_rate == 0.8
     assert virus.mortality_rate == 0.3
+
+def virus_sars(self):
+    virus = Virus("Sars", 0.75, 0.6)
+    virus.name == "Sars"
+    virus.repro_rate == 0.75
+    virus.mortality_rate == 0.6
+
+def virus_flu(self):
+    virus = Virus("Flu", 0.6, 0.5)
+    virus.name == "Flu"
+    virus.repro_rate == 0.6
+    virus.mortality_rate == 0.5
+
+def virus_whooping_cough(self):
+    virus = Virus("Whooping Cough", 0.7, 0.25)
+    virus.name == "Whooping Cough"
+    virus.repro_rate == 0.7
+    virus.mortality_rate == 0.25
