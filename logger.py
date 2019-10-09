@@ -50,7 +50,11 @@ class Logger(object):
             file.write(f"{person._id} didn't infect {random_person._id} because they are vaccinated\n")
         elif random_person_sick == True and did_infect == None:
             file.write(f"{person._id} didn't infect {random_person._id} because they are sick\n")
+        else:
+            file.write(f"{person._id} didn't infect {random_person._id}\n")
+
         file.close()
+
     def log_infection_survival(self, person, did_die_from_infection):
         ''' The Simulation object uses this method to log the results of every
         call of a Person object's .resolve_infection() method.
