@@ -184,7 +184,7 @@ class Simulation(object):
 
         self._infect_newly_infected()
         # TODO: Finish this method.
-        pass
+        
 
     def interaction(self, person, random_person): #Chudier
         """
@@ -243,7 +243,7 @@ class Simulation(object):
         # TODO: Once you have iterated through the entire list of
         # self.newly_infected, remember
         # to reset self.newly_infected back to an empty list.
-        pass
+    
 
 
 if __name__ == "__main__":
