@@ -10,7 +10,6 @@ class Simulation(object):
     """Main class that will run the herd immunity simulation program.
     Expects initialization parameters passed as command line arguments when
     file is run.
-
     Simulates the spread of a virus through a given population.  The percentage
     of the
     population that are vaccinated, the size of the population, and the amount
@@ -35,7 +34,6 @@ class Simulation(object):
         You will also need to keep track of the number of people that have die
         as a result
         of the infection.
-
         All arguments will be passed as command-line arguments when the file is
         run.
         HINT: Look in the if __name__ == "__main__" function at the bottom.
@@ -74,10 +72,8 @@ class Simulation(object):
                 initial_infected (int): The number of infected people that the
                 simulation
                 will begin with.
-
             Returns:
                 list: A list of Person objects.
-
         """
         person_list = []
 
@@ -111,11 +107,9 @@ class Simulation(object):
         """
         The simulation should only end if the entire population is dead
         or everyone is vaccinated.
-
             Returns:
                 bool: True for simulation should continue, False if it should
                 end.
-
         """
         for person in self.population:
             if person.infection == self.virus and person.is_alive == True:
@@ -141,7 +135,7 @@ class Simulation(object):
         # end of each time step.
         # TODO: Set this variable using a helper
         time_step_counter = 0
-        should_continue = None
+        #should_continue = None
 
         while self._simulation_should_continue():
             self.time_step()
@@ -158,7 +152,6 @@ class Simulation(object):
         """
         This method should contain all the logic for computing one time step
         in the simulation.
-
         This includes:
             1. 100 total interactions with a randon person for each infected
             person in the population
@@ -199,11 +192,9 @@ class Simulation(object):
         for an
         interaction. It assumes that only living people are passed in as
         parameters.
-
         Args:
             person1 (person): The initial infected person
             random_person (person): The person that person1 interacts with.
-
         """
         # Assert statements are included to make sure that only living people
         # are passed
