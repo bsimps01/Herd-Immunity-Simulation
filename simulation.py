@@ -61,7 +61,7 @@ class Simulation(object):
         self.population = self._create_population(self.initial_infected)
         self.total_dead = 0  # Int
         self.file_name = "{}_simulation_pop_{}_vp_{}_infected_{}.txt".format(
-            virus_name, pop_size, vacc_percentage, initial_infected)
+            virus.name, pop_size, vacc_percentage, initial_infected)
         self.logger = Logger(self.file_name)
         self.newly_infected = []
 
@@ -86,10 +86,11 @@ class Simulation(object):
 
         for number in range(self.initial_infected):
             person_list[number].infection = self.virus
+        vaccinated_people = int(self.vacc_percentage*self.pop_size )
 
-        vaccinated_people = int(self.vacc_percentage * self.pop_size) 
         for number in range(vaccinated_people):
-            person_list[number+self.initial_infected].is_vaccinated = True
+            if number + self.initial_infected < self.pop_size:
+                person_list[number+self.initial_infected].is_vaccinated = True
 
         return person_list
         # TODO: Finish this method!  This method should be called when the
@@ -191,7 +192,7 @@ class Simulation(object):
 
         self._infect_newly_infected()
         # TODO: Finish this method.
-        pass
+       
 
     def interaction(self, person, random_person): #Chudier
         """
@@ -227,14 +228,18 @@ class Simulation(object):
 
         if random_person.is_vaccinated:
             self.logger.log_interaction(person,random_person, False, True)
+            return "random is vaccinated"
         elif random_person.infection == self.virus:
             self.logger.log_interaction(person,random_person, True, False)
+            return "random is already infected"
         else:
             if random.random() < self.virus.repro_rate:
                 self.newly_infected.append(random_person)
                 self.logger.log_interaction(person,random_person, False, False, True)
+                return "random got infected"
             else:
                 self.logger.log_interaction(person,random_person, False, False, False)
+                return "random got lucky"
         
 
     def _infect_newly_infected(self): #Chudier
@@ -252,7 +257,7 @@ class Simulation(object):
         # TODO: Once you have iterated through the entire list of
         # self.newly_infected, remember
         # to reset self.newly_infected back to an empty list.
-        pass
+        
 
 
 if __name__ == "__main__":
