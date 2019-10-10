@@ -19,7 +19,7 @@ class Logger(object):
         '''
         self.pop_size = pop_size
         file = open(self.file_name, 'w+')
-        file.write(f'{pop_size}+{vacc_percentage}+{virus_name}+{mortality_rate}+{basic_repro_num}/n')
+        file.write(f'{pop_size}+{vacc_percentage}+{virus_name}+{mortality_rate}+{basic_repro_num}\n')
         file.close()
         # TODO: Finish this method. This line of metadata should be tab-delimited
         # it should create the text file that we will store all logs in.
