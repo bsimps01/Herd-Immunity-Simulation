@@ -1,4 +1,8 @@
 What were the inputs you gave the simulation? (Population size, percent vaccinated, virus name, mortality rate, reproductive rate)
+-Some of the inputs that were given in the simulation were first related to the Ebola virus with the same kind of parameters that were specified in the test. Then after putting in the details of the whooping cough, seasonal flu and Sars from the medical chart, we then included an infection rate of 10 with 50 immunned. This helped with getting results.
+
 What percentage of the population became infected at some point before the virus burned out?
+-The precentage of the population came out to having at least 20% of the population getting infected before the vaccinated people kept the virus from spreading.
 What percentage of the population died from the virus?
 Out of all interactions sick individuals had during the entire simulation, how many total interactions did we see where a vaccination saved a person from potentially becoming infected?
+-Less than 3% died from the infection, the majority of the vaccination helped with the population sustaining itself and not falling ill to the percentage that got sick.
